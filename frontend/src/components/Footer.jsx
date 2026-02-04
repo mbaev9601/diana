@@ -1,5 +1,5 @@
 import { useLanguage } from "./Navbar";
-import { siteConfig } from "../config/siteConfig";
+import { contact, tagline, social } from "../config/siteConfig";
 import { translations } from "../config/translations";
 import { Facebook, Instagram, Heart } from "lucide-react";
 
@@ -13,16 +13,16 @@ export const Footer = () => {
           <div>
             <h3 className="text-2xl font-heading font-bold mb-4">Diana Balchik</h3>
             <p className="text-white/80 text-sm">
-              {t(siteConfig.brand.tagline)}
+              {t(tagline)}
             </p>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4">{t(translations.contact.title)}</h4>
             <div className="space-y-2 text-sm text-white/80">
-              <p>{lang === "bg" ? siteConfig.contact.addressBg : siteConfig.contact.address}</p>
-              <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white transition-colors block">
-                {siteConfig.contact.phone}
+              <p>{lang === "bg" ? contact.addressBg : contact.address}</p>
+              <a href={`tel:${contact.phone}`} className="hover:text-white transition-colors block">
+                {contact.phone}
               </a>
             </div>
           </div>
@@ -31,7 +31,7 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Social</h4>
             <div className="flex gap-4">
               <a 
-                href={siteConfig.social.facebook} 
+                href={social.facebook} 
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Facebook"
                 data-testid="social-facebook"
@@ -39,7 +39,7 @@ export const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
-                href={siteConfig.social.instagram}
+                href={social.instagram}
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Instagram"
                 data-testid="social-instagram"
