@@ -2,7 +2,6 @@ import { useState, useEffect, createContext, useContext } from "react";
 import { translations } from "../config/translations";
 import { Menu as MenuIcon, X } from "lucide-react";
 
-// Language Context
 const LanguageContext = createContext();
 
 export const useLanguage = () => useContext(LanguageContext);
@@ -10,19 +9,22 @@ export const useLanguage = () => useContext(LanguageContext);
 export const LanguageProvider = ({ children }) => {
   const [lang, setLang] = useState("bg");
   
-  const t = (obj) => {
-    if (!obj) return "";
-    return obj[lang] || obj.en || "";
+  const t = (key) => {
+    if (!key) return "";
+    if (typeof key === "object" && key[lang]) return key[lang];
+    if (typeof key === "object" && key.en) return key.en;
+    return key;
   };
   
+  const getText = (enText, bgText) => lang === "bg" ? bgText : enText;
+  
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ lang, setLang, t, getText }}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
-// Navigation Component
 export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
