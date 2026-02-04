@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { siteConfig } from "./config/siteConfig";
+import { seoTitle, coffeeLocation, burgerLocation, galleryImages, seoDescEn } from "./config/siteConfig";
 import { LanguageProvider, Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { MenuSection } from "./components/MenuSection";
@@ -11,7 +11,6 @@ import { GallerySection } from "./components/GallerySection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
-// JSON-LD Structured Data Component
 const JsonLd = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -20,13 +19,13 @@ const JsonLd = () => {
         "@type": "Organization",
         "name": "Diana Balchik",
         "url": typeof window !== 'undefined' ? window.location.origin : '',
-        "logo": siteConfig.gallery.images[0].url,
-        "description": siteConfig.seo.description.en
+        "logo": galleryImages[0].url,
+        "description": seoDescEn
       },
       {
         "@type": "CoffeeShop",
-        "name": "Diana Coffee Shop",
-        "alternateName": "Кафе Сладкарница Диана",
+        "name": coffeeLocation.nameEn,
+        "alternateName": coffeeLocation.nameBg,
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "ul. Cherno More 1",
@@ -35,17 +34,17 @@ const JsonLd = () => {
           "addressCountry": "BG"
         },
         "telephone": "+359895265217",
-        "priceRange": "BGN 10-20",
+        "priceRange": coffeeLocation.priceRange,
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "82"
+          "ratingValue": String(coffeeLocation.rating),
+          "reviewCount": String(coffeeLocation.reviewCount)
         }
       },
       {
         "@type": "Restaurant",
-        "name": "Burger Bar & Bagel Diana",
-        "alternateName": "Бургер Бар и Бейгъл Диана",
+        "name": burgerLocation.nameEn,
+        "alternateName": burgerLocation.nameBg,
         "servesCuisine": ["American", "Bagels", "Burgers"],
         "address": {
           "@type": "PostalAddress",
@@ -55,11 +54,11 @@ const JsonLd = () => {
           "addressCountry": "BG"
         },
         "telephone": "+359895265217",
-        "priceRange": "BGN 10-20",
+        "priceRange": burgerLocation.priceRange,
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "84"
+          "ratingValue": String(burgerLocation.rating),
+          "reviewCount": String(burgerLocation.reviewCount)
         }
       }
     ]
@@ -73,7 +72,6 @@ const JsonLd = () => {
   );
 };
 
-// Main Page Component
 const DianaWebsite = () => {
   return (
     <div className="min-h-screen">
@@ -94,7 +92,7 @@ const DianaWebsite = () => {
 
 function App() {
   useEffect(() => {
-    document.title = siteConfig.seo.title;
+    document.title = seoTitle;
   }, []);
 
   return (
