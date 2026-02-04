@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useLanguage } from "./Navbar";
-import { siteConfig } from "../config/siteConfig";
+import { galleryImages } from "../config/siteConfig";
 import { translations } from "../config/translations";
 import { Dialog, DialogContent, DialogClose } from "./ui/dialog";
 import { X } from "lucide-react";
 
 export const GallerySection = () => {
-  const { t } = useLanguage();
+  const { t, getText } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   
@@ -23,7 +23,7 @@ export const GallerySection = () => {
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {siteConfig.gallery.images.map((image, idx) => (
+          {galleryImages.map((image, idx) => (
             <div 
               key={idx}
               className="relative aspect-square overflow-hidden rounded-2xl cursor-pointer group"
@@ -32,7 +32,7 @@ export const GallerySection = () => {
             >
               <img 
                 src={image.url}
-                alt={t(image.alt)}
+                alt={getText(image.altEn, image.altBg)}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
@@ -51,7 +51,7 @@ export const GallerySection = () => {
               {selectedImage && (
                 <img 
                   src={selectedImage.url}
-                  alt={t(selectedImage.alt)}
+                  alt={getText(selectedImage.altEn, selectedImage.altBg)}
                   className="w-full h-auto rounded-2xl"
                 />
               )}
