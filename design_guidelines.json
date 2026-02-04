@@ -1,0 +1,143 @@
+{
+  "brand_identity": {
+    "name": "Diana Balchik",
+    "concepts": [
+      {
+        "name": "Diana Coffee Shop",
+        "type": "Coffee & Sweets",
+        "vibe": "Cozy, Aromatic, Sweet",
+        "rating": "4.9 (82 reviews)",
+        "price_range": "BGN 10-20"
+      },
+      {
+        "name": "Burger Bar & Bagel Diana",
+        "type": "Burgers & Bagels",
+        "vibe": "Juicy, Vibrant, Savory",
+        "rating": "5.0 (84 reviews)",
+        "price_range": "BGN 10-20"
+      }
+    ],
+    "shared_contact": {
+      "address": "Tsentar, ul. 'Cherno More' 1, 9600 Balchik",
+      "phone": "0895265217"
+    },
+    "theme_mode": "light",
+    "emotional_tone": "Warm, Welcoming, Indulgent, Local"
+  },
+  "design_system": {
+    "typography": {
+      "headings": {
+        "font_family": "Fraunces, serif",
+        "weights": ["600", "700"],
+        "usage": "Main headlines, section titles. Adds the 'Cafe' elegance."
+      },
+      "body": {
+        "font_family": "Manrope, sans-serif",
+        "weights": ["400", "500", "600"],
+        "usage": "Paragraphs, UI elements, menus. Clean and modern."
+      },
+      "accents": {
+        "font_family": "Caveat, handwriting",
+        "usage": "Small decorative notes, 'Best in Town' badges."
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "name": "Diana Purple",
+          "hex": "#5D2E46",
+          "tailwind": "bg-[#5D2E46] text-white",
+          "usage": "Primary buttons, active states, brand headers"
+        },
+        "secondary": {
+          "name": "Latte Cream",
+          "hex": "#F9F5F1",
+          "tailwind": "bg-[#F9F5F1]",
+          "usage": "Page background, card backgrounds"
+        },
+        "accent_coffee": {
+          "name": "Warm Gold",
+          "hex": "#D4A373",
+          "tailwind": "text-[#D4A373]",
+          "usage": "Coffee shop highlights, stars"
+        },
+        "accent_burger": {
+          "name": "Savory Orange",
+          "hex": "#E76F51",
+          "tailwind": "text-[#E76F51]",
+          "usage": "Burger bar highlights, call-to-actions"
+        },
+        "text": {
+          "main": "#2D2424",
+          "muted": "#6B5E5E"
+        }
+      },
+      "gradients": {
+        "hero_overlay": "linear-gradient(to bottom, rgba(93, 46, 70, 0.1), rgba(93, 46, 70, 0.05))"
+      }
+    },
+    "spacing": {
+      "container_padding": "px-6 md:px-12 lg:px-24",
+      "section_gap": "py-16 md:py-24",
+      "element_gap": "gap-6"
+    },
+    "border_radius": {
+      "cards": "rounded-2xl",
+      "buttons": "rounded-full"
+    },
+    "shadows": {
+      "card": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+      "hover": "shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_coffee": "https://images.unsplash.com/photo-1764277639919-1f77aaee0ab5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHxsYXR0ZSUyMGFydCUyMGNvZmZlZSUyMGN1cCUyMGNvenl8ZW58MHx8fHwxNzcwMjM0OTI3fDA&ixlib=rb-4.1.0&q=85",
+      "hero_burger": "https://images.unsplash.com/photo-1632898657999-ae6920976661?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwYnVyZ2VyJTIwd29vZGVuJTIwdGFibGV8ZW58MHx8fHwxNzcwMjM0OTI1fDA&ixlib=rb-4.1.0&q=85",
+      "gallery": [
+        "https://images.unsplash.com/photo-1632898658030-ead731d252d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwyfHxnb3VybWV0JTIwYnVyZ2VyJTIwd29vZGVuJTIwdGFibGV8ZW58MHx8fHwxNzcwMjM0OTI1fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1695824431539-873b615cf220?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHxsYXR0ZSUyMGFydCUyMGNvZmZlZSUyMGN1cCUyMGNvenl8ZW58MHx8fHwxNzcwMjM0OTI3fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1559766569-b8a373a2dcb3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxiYWxjaGlrJTIwYnVsZ2FyaWElMjBzZWElMjB2aWV3fGVufDB8fHx8MTc3MDIzNDkzMXww&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1760687510983-68b5e2525bd4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHw0fHxsYXR0ZSUyMGFydCUyMGNvZmZlZSUyMGN1cCUyMGNvenl8ZW58MHx8fHwxNzcwMjM0OTI3fDA&ixlib=rb-4.1.0&q=85"
+      ]
+    },
+    "icons": "lucide-react"
+  },
+  "components": {
+    "ui_library": "shadcn/ui",
+    "custom_modifications": {
+      "Tabs": "Use 'Tabs' for the Menu section. Style the triggers to look like pill buttons. Active state should be Purple for Coffee, Orange for Burger.",
+      "Card": "Use 'Card' for Location and Review blocks. Add soft shadow and rounded-2xl. No hard borders.",
+      "Button": "Rounded-full. Primary button: Purple background. Secondary: Outline with Purple text."
+    },
+    "layout_patterns": {
+      "hero": "Split screen or Bento Grid. Left: Coffee vibe. Right: Burger vibe. Unified by the 'Diana' brand overlay.",
+      "menu": "Tabbed interface. 'Coffee & Sweets' vs 'Burgers & Bagels'. Each item should have a price and small description.",
+      "locations": "Two distinct cards side-by-side. One for Coffee Shop, one for Burger Bar. Both share the same address but might have different hours or phone extensions if applicable (use shared for now)."
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'lucide-react' for icons.",
+    "2. FONTS: Import 'Fraunces' and 'Manrope' from Google Fonts in index.css.",
+    "3. THEME: Update tailwind.config.js to use the Diana Purple (#5D2E46) as 'primary' and Latte Cream (#F9F5F1) as 'background'.",
+    "4. HERO: Build a Hero section that immediately shows the duality. Use the two hero images provided.",
+    "5. TABS: Implement the Menu using Shadcn Tabs. Create dummy data for the menu items (Espresso, Cheesecake, Classic Burger, Bagel Sandwich).",
+    "6. REVIEWS: Create a 'Social Proof' section with the 4.9 and 5.0 ratings prominently displayed.",
+    "7. CONTACT: Embed the Google Map for 'Cherno More 1, Balchik'.",
+    "8. LANGUAGE: Add a simple toggle (BG/EN) in the Navbar. Default to BG.",
+    "9. ACCESSIBILITY: Ensure text contrast on the purple buttons is high (White text).",
+    "10. TESTING: Add data-testid to all interactive elements (buttons, tabs, cards)."
+  ],
+  "universal_guidelines": {
+    "do_not": [
+      "Do not use generic 'Inter' font for headings.",
+      "Do not use pure black (#000000). Use #2D2424.",
+      "Do not make the design look like a cold corporate dashboard. It must feel warm and edible."
+    ],
+    "must_do": [
+      "Use generous padding (py-20) between sections.",
+      "Use rounded corners (rounded-2xl) to match the friendly vibe.",
+      "Ensure mobile responsiveness is perfect (stack columns on mobile)."
+    ]
+  }
+}
