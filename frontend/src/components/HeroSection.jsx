@@ -1,13 +1,11 @@
 import { useLanguage } from "./Navbar";
-import { siteConfig } from "../config/siteConfig";
+import { coffeeLocation, burgerLocation, contact, tagline, galleryImages } from "../config/siteConfig";
 import { translations } from "../config/translations";
 import { Button } from "./ui/button";
 import { Phone, Star, Coffee, Utensils, ChevronRight, Navigation } from "lucide-react";
 
 export const HeroSection = () => {
-  const { t } = useLanguage();
-  const coffeeLocation = siteConfig.locations[0];
-  const burgerLocation = siteConfig.locations[1];
+  const { t, getText } = useLanguage();
   
   return (
     <section id="home" className="relative min-h-screen pt-20" data-testid="hero-section">
@@ -47,18 +45,18 @@ export const HeroSection = () => {
           <div className="relative group overflow-hidden rounded-3xl shadow-card card-hover animate-fade-in-up animation-delay-300" data-testid="hero-card-coffee">
             <div className="aspect-[4/3] relative">
               <img 
-                src={siteConfig.gallery.images[0].url}
-                alt={t(siteConfig.gallery.images[0].alt)}
+                src={galleryImages[0].url}
+                alt={getText(galleryImages[0].altEn, galleryImages[0].altBg)}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-diana-purple/80 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <div className="flex items-center gap-2 mb-2">
                   <Coffee className="w-6 h-6" />
-                  <span className="text-sm font-medium opacity-90">{t(coffeeLocation.type)}</span>
+                  <span className="text-sm font-medium opacity-90">{getText(coffeeLocation.typeEn, coffeeLocation.typeBg)}</span>
                 </div>
-                <h3 className="text-2xl font-heading font-bold mb-2">{t(coffeeLocation.name)}</h3>
-                <p className="text-sm opacity-90">{t(coffeeLocation.focus)}</p>
+                <h3 className="text-2xl font-heading font-bold mb-2">{getText(coffeeLocation.nameEn, coffeeLocation.nameBg)}</h3>
+                <p className="text-sm opacity-90">{getText(coffeeLocation.focusEn, coffeeLocation.focusBg)}</p>
               </div>
             </div>
           </div>
@@ -66,18 +64,18 @@ export const HeroSection = () => {
           <div className="relative group overflow-hidden rounded-3xl shadow-card card-hover animate-fade-in-up animation-delay-400" data-testid="hero-card-burger">
             <div className="aspect-[4/3] relative">
               <img 
-                src={siteConfig.gallery.images[1].url}
-                alt={t(siteConfig.gallery.images[1].alt)}
+                src={galleryImages[1].url}
+                alt={getText(galleryImages[1].altEn, galleryImages[1].altBg)}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-savory-orange/80 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <div className="flex items-center gap-2 mb-2">
                   <Utensils className="w-6 h-6" />
-                  <span className="text-sm font-medium opacity-90">{t(burgerLocation.type)}</span>
+                  <span className="text-sm font-medium opacity-90">{getText(burgerLocation.typeEn, burgerLocation.typeBg)}</span>
                 </div>
-                <h3 className="text-2xl font-heading font-bold mb-2">{t(burgerLocation.name)}</h3>
-                <p className="text-sm opacity-90">{t(burgerLocation.focus)}</p>
+                <h3 className="text-2xl font-heading font-bold mb-2">{getText(burgerLocation.nameEn, burgerLocation.nameBg)}</h3>
+                <p className="text-sm opacity-90">{getText(burgerLocation.focusEn, burgerLocation.focusBg)}</p>
               </div>
             </div>
           </div>
@@ -90,7 +88,7 @@ export const HeroSection = () => {
             asChild
             data-testid="cta-call"
           >
-            <a href={`tel:${siteConfig.contact.phone}`}>
+            <a href={`tel:${contact.phone}`}>
               <Phone className="w-5 h-5 mr-2" />
               {t(translations.buttons.callNow)}
             </a>
@@ -102,7 +100,7 @@ export const HeroSection = () => {
             asChild
             data-testid="cta-directions"
           >
-            <a href={siteConfig.contact.googleMapsUrl} target="_blank" rel="noopener noreferrer">
+            <a href={contact.googleMapsUrl} target="_blank" rel="noopener noreferrer">
               <Navigation className="w-5 h-5 mr-2" />
               {t(translations.buttons.getDirections)}
             </a>
