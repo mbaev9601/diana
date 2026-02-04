@@ -1,5 +1,5 @@
 import { useLanguage } from "./Navbar";
-import { siteConfig } from "../config/siteConfig";
+import { contact } from "../config/siteConfig";
 import { translations } from "../config/translations";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
@@ -27,11 +27,11 @@ export const ContactSection = () => {
                     <div>
                       <p className="text-sm text-text-muted">{t(translations.contact.phone)}</p>
                       <a 
-                        href={`tel:${siteConfig.contact.phone}`}
+                        href={`tel:${contact.phone}`}
                         className="text-xl font-semibold text-text-main hover:text-diana-purple transition-colors"
                         data-testid="contact-phone"
                       >
-                        {siteConfig.contact.phone}
+                        {contact.phone}
                       </a>
                     </div>
                   </div>
@@ -43,7 +43,7 @@ export const ContactSection = () => {
                     <div>
                       <p className="text-sm text-text-muted">{t(translations.contact.address)}</p>
                       <p className="text-lg font-semibold text-text-main" data-testid="contact-address">
-                        {lang === "bg" ? siteConfig.contact.addressBg : siteConfig.contact.address}
+                        {lang === "bg" ? contact.addressBg : contact.address}
                       </p>
                     </div>
                   </div>
@@ -55,7 +55,7 @@ export const ContactSection = () => {
                     <div>
                       <p className="text-sm text-text-muted">{t(translations.contact.plusCode)}</p>
                       <p className="text-lg font-semibold text-text-main" data-testid="contact-pluscode">
-                        {siteConfig.contact.plusCode}
+                        {contact.plusCode}
                       </p>
                     </div>
                   </div>
@@ -67,7 +67,7 @@ export const ContactSection = () => {
                     asChild
                     data-testid="contact-cta-call"
                   >
-                    <a href={`tel:${siteConfig.contact.phone}`}>
+                    <a href={`tel:${contact.phone}`}>
                       <Phone className="w-4 h-4 mr-2" />
                       {t(translations.buttons.callNow)}
                     </a>
@@ -78,7 +78,7 @@ export const ContactSection = () => {
                     asChild
                     data-testid="contact-cta-directions"
                   >
-                    <a href={siteConfig.contact.googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={contact.googleMapsUrl} target="_blank" rel="noopener noreferrer">
                       <Navigation className="w-4 h-4 mr-2" />
                       {t(translations.buttons.getDirections)}
                     </a>
