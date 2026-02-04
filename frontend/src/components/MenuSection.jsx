@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { useLanguage } from "./Navbar";
-import { siteConfig } from "../config/siteConfig";
+import { coffeeMenuSections, burgerMenuSections, tagline } from "../config/siteConfig";
 import { translations } from "../config/translations";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Coffee, Utensils } from "lucide-react";
 
 export const MenuSection = () => {
-  const { t } = useLanguage();
+  const { t, getText } = useLanguage();
   const [activeTab, setActiveTab] = useState("coffee");
-  
-  const coffeeMenu = siteConfig.menus.coffee;
-  const burgerMenu = siteConfig.menus.burger;
   
   return (
     <section id="menu" className="section-padding bg-white" data-testid="menu-section">
@@ -20,7 +17,7 @@ export const MenuSection = () => {
             {t(translations.menu.title)}
           </h2>
           <p className="text-text-muted font-body">
-            {t(siteConfig.brand.tagline)}
+            {t(tagline)}
           </p>
         </div>
         
@@ -46,10 +43,10 @@ export const MenuSection = () => {
           
           <TabsContent value="coffee" className="animate-fade-in-up" data-testid="menu-content-coffee">
             <div className="space-y-8">
-              {coffeeMenu.sections.map((section, idx) => (
+              {coffeeMenuSections.map((section, idx) => (
                 <div key={idx} className="bg-latte-cream rounded-2xl p-6">
                   <h3 className="text-xl font-heading font-semibold text-diana-purple mb-4">
-                    {t(section.name)}
+                    {getText(section.nameEn, section.nameBg)}
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {section.items.map((item, itemIdx) => (
@@ -59,8 +56,8 @@ export const MenuSection = () => {
                         data-testid={`menu-item-coffee-${idx}-${itemIdx}`}
                       >
                         <div>
-                          <h4 className="font-semibold text-text-main">{t(item.name)}</h4>
-                          <p className="text-sm text-text-muted">{t(item.description)}</p>
+                          <h4 className="font-semibold text-text-main">{getText(item.nameEn, item.nameBg)}</h4>
+                          <p className="text-sm text-text-muted">{getText(item.descEn, item.descBg)}</p>
                         </div>
                         <span className="font-semibold text-diana-purple whitespace-nowrap ml-4">
                           {item.price}
@@ -75,10 +72,10 @@ export const MenuSection = () => {
           
           <TabsContent value="burger" className="animate-fade-in-up" data-testid="menu-content-burger">
             <div className="space-y-8">
-              {burgerMenu.sections.map((section, idx) => (
+              {burgerMenuSections.map((section, idx) => (
                 <div key={idx} className="bg-latte-cream rounded-2xl p-6">
                   <h3 className="text-xl font-heading font-semibold text-savory-orange mb-4">
-                    {t(section.name)}
+                    {getText(section.nameEn, section.nameBg)}
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {section.items.map((item, itemIdx) => (
@@ -88,8 +85,8 @@ export const MenuSection = () => {
                         data-testid={`menu-item-burger-${idx}-${itemIdx}`}
                       >
                         <div>
-                          <h4 className="font-semibold text-text-main">{t(item.name)}</h4>
-                          <p className="text-sm text-text-muted">{t(item.description)}</p>
+                          <h4 className="font-semibold text-text-main">{getText(item.nameEn, item.nameBg)}</h4>
+                          <p className="text-sm text-text-muted">{getText(item.descEn, item.descBg)}</p>
                         </div>
                         <span className="font-semibold text-savory-orange whitespace-nowrap ml-4">
                           {item.price}
